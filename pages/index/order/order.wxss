@@ -49,7 +49,7 @@ swiper {
  background: #F5F7F9;
 }
 .content-item{
- overflow-y: scroll
+ /* overflow-y: scroll */
 }
 .tabbar{
   display: flex;
@@ -246,4 +246,21 @@ swiper {
   padding: 24rpx 0;
   margin-top: 35rpx;
   border-top: 1px solid #EAEAEA;
+}
+
+.norob{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.noimage{
+  width: 235rpx;
+}
+.noorder{
+  font-size:36rpx;
+  color:rgba(53,53,53,1);
+  margin-top: 40rpx;
 }

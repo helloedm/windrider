@@ -31,53 +31,64 @@ module.exports=function(m){
  <swiper class="content" duration="500" current="{{currentTab}}" bindchange="changeContent">
  <!-- 已完成 -->
     <swiper-item class="content-item">
-      <view style='background:#fff;margin-bottom:32rpx;' wx:for='{{finishlist}}' wx:key='{{index}}'>
-        <view class='order-content'>
-          <view class='limit'>
-            <view style='display:flex;align-items:center;'>
-              <view class='sign'></view>
-              <text>
-                <text class='limit-time'>{{slicesendtime(item.arrivedTime)}}送达</text>
-                <text class='arrive-time' wx:if='{{item.presetTime >= 0}}'>(正常送达)</text>
-                <text class='arrive-time' style="color:#FF5400;" wx:else>(超时{{absolute(item.presetTime)}}分钟)</text>
-              </text>
-            </view>
-            <view>
-              <text>
-                <text class='amount'>{{item.money}}</text>
-                <text class='rmb'>元</text>
-              </text>
-            </view>
-          </view>
-          <view class='get'>
-            <view class='shopname'>
-              <view class="get-button">取
-              </view>
-              <view class='get-name'>{{item.shopName}}</view>         
-            </view>
-            <view class='shopadders'>
-              <view class='adders'>{{item.shopAddress}}</view>
-            </view>
-          </view>
-          <!-- 送 -->
-          <view class='get' style='margin-top:42rpx;'>
-            <view class='shopname'>
-              <view class="get-button">送
-              </view>
-              <view class='get-name'>{{item.buyerName}}（{{item.distance}}m）</view>         
-            </view>
-            <view class='shopadders'>
-              <view class='adders'>{{item.buyerAddress}}</view>
-            </view>
-          </view>
-          <!-- 查看订单详情  -->
-          <!-- <view class='checkorder' wx:if='{{item.presetTime < 0}}'>查看订单详情 ></view> -->
-        </view>
+      <view class='norob' wx:if='{{ finishlist.length == 0 }}'>
+        <image src='http://youxuan.ecbao.cn/material/1542444848401_44.png' class='noimage' mode='widthFix'></image>
+        <view class='noorder'>暂无完成的订单~</view>
       </view>
+
+      <scroll-view scroll-y style='height:100%;'>
+        <view style='background:#fff;margin-bottom:32rpx;' wx:if='{{ finishlist.length != 0 }}' wx:for='{{finishlist}}' wx:key='{{index}}'>
+          <view class='order-content'>
+            <view class='limit'>
+              <view style='display:flex;align-items:center;'>
+                <view class='sign'></view>
+                <text>
+                  <text class='limit-time'>{{slicesendtime(item.arrivedTime)}}送达</text>
+                  <text class='arrive-time' wx:if='{{item.presetTime >= 0}}'>(正常送达)</text>
+                  <text class='arrive-time' style="color:#FF5400;" wx:else>(超时{{absolute(item.presetTime)}}分钟)</text>
+                </text>
+              </view>
+              <view>
+                <text>
+                  <text class='amount'>{{item.money}}</text>
+                  <text class='rmb'>元</text>
+                </text>
+              </view>
+            </view>
+            <view class='get'>
+              <view class='shopname'>
+                <view class="get-button">取
+                </view>
+                <view class='get-name'>{{item.shopName}}</view>         
+              </view>
+              <view class='shopadders'>
+                <view class='adders'>{{item.shopAddress}}</view>
+              </view>
+            </view>
+            <!-- 送 -->
+            <view class='get' style='margin-top:42rpx;'>
+              <view class='shopname'>
+                <view class="get-button">送
+                </view>
+                <view class='get-name'>{{item.buyerName}}（{{item.distance}}m）</view>         
+              </view>
+              <view class='shopadders'>
+                <view class='adders'>{{item.buyerAddress}}</view>
+              </view>
+            </view>
+            <!-- 查看订单详情  -->
+            <!-- <view class='checkorder' wx:if='{{item.presetTime < 0}}'>查看订单详情 ></view> -->
+          </view>
+        </view>
+      </scroll-view>
     </swiper-item>
 <!-- 投诉 -->
     <swiper-item class="content-item">
-      <view style='background:#fff;'>
+      <view class='norob'>
+        <image src='http://youxuan.ecbao.cn/material/1542444848401_44.png' class='noimage' mode='widthFix'></image>
+        <view class='noorder'>暂无被投诉的订单~</view>
+      </view>
+      <view style='background:#fff;display:none;'>
         <view class='order-content'>
           <view class='limit'>
             <view style='display:flex;align-items:center;'>

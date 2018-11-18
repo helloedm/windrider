@@ -73,6 +73,7 @@ App({
           // console.log(res);
           // 发送 res.code 到后台换取  sessionId, isBind ,ajtSpFansId(该微信用户在我们系统中的fansId)
           netWork.post("sp/riderSpLogin", { code: res.code }, (res) => {
+            console.log(res);
             wx.hideLoading()
             if (res.status == 200){
               wx.setStorageSync('sessionId', res.data.sessionId);

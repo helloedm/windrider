@@ -84,6 +84,7 @@ module.exports=function(m){
           </view>
         </view>
       </view>
+      <view style='width:100%;height:100rpx;'></view>
     </swiper-item>
 <!-- 取餐 -->
     <swiper-item class="content-item">
@@ -92,7 +93,7 @@ module.exports=function(m){
         <view class='noorder'>暂时没有订单啦~</view>
       </view>
       <view style='background:#fff;margin-bottom:24rpx;' wx:if="{{sendfood.length != 0}}" wx:for='{{sendfood}}' wx:key='{{index}}'>
-        <view class='order-content'>
+        <view class='order-content' style='min-height:500rpx;'>
           <view class='limit'>
             <view>  
               <text>
@@ -116,7 +117,9 @@ module.exports=function(m){
                 <text>{{item.shopName}}</text>
                 <view class='open-map'                       
                       bindtap='openrtob' 
-                      data-id='{{index}}'></view> 
+                      data-id='{{index}}'>
+                  <image src='http://youxuan.ecbao.cn/material/1542532242048_80.png' style='width:24rpx;height:30rpx;transform:rotate(-135deg)'></image>
+                </view> 
               </view>
             </view>
             <view class='shopadders' style='padding-left:106rpx;'>
@@ -135,6 +138,7 @@ module.exports=function(m){
           </view>
         </view>
       </view>
+      <view style='width:100%;height:100rpx;'></view>
     </swiper-item>
 <!-- 配送 -->
     <swiper-item class="content-item">
@@ -144,7 +148,7 @@ module.exports=function(m){
       </view>
 
       <view style='background:#fff;margin-bottom:24rpx;' wx:if="{{sendlist.length != 0}}" wx:for='{{sendlist}}' wx:key='{{index}}'>
-        <view class='order-content'>
+        <view class='order-content' style='min-height:380rpx;'>
           <view class='limit'>
             <view>  
               <text>
@@ -169,7 +173,9 @@ module.exports=function(m){
                 <view class='open-map' 
                       bindtap='openbtoc'
                       data-id='{{index}}'
-                      style='position:absolute;top:70%;right:0;'></view> 
+                      style='position:absolute;top:70%;right:0;'>
+                      <image src='http://youxuan.ecbao.cn/material/1542532242048_80.png' style='width:24rpx;height:30rpx;transform:rotate(-135deg)'></image>
+                      </view> 
               </view>
             </view>
             <view class='shopadders' style='padding-left:106rpx;margin-top:-15rpx;'>
@@ -182,6 +188,7 @@ module.exports=function(m){
           </view>
         </view>
       </view>
+      <view style='width:100%;height:100rpx;'></view>
     </swiper-item>
  </swiper>
 </view>

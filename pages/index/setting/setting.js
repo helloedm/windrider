@@ -113,5 +113,9 @@ Page({
       isshowjump: false
     })
   },
-
+  upidcard(){
+    wx.navigateTo({
+      url: '../idcardup/idcardup',
+    })
+  }
 })

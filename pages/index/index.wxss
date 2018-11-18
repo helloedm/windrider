@@ -9,7 +9,6 @@ swiper {
  height: 100%;
 }
 .tab{
-  /* opacity: 0; */
   width: 100%;
   height: 111rpx;
   position: fixed;
@@ -25,11 +24,12 @@ swiper {
   align-items: center;
 }
 .tab .personal-center{
-  width: 32rpx;
+  width: 40rpx;
   height: 40rpx;
-  background: black;
   position: absolute;
   left: 33rpx;
+  background-image: url('http://youxuan.ecbao.cn/material/1542531981213_8.png');
+  background-size: 100% 100%;
 }
 .personal-apply{
   position: absolute;
@@ -50,15 +50,17 @@ swiper {
   font-weight: bold;
 }
 .content{
-  /* padding-top: 133rpx; */
   box-sizing: border-box;
   text-align: center;
   font-size: 14px;
   background: #F5F7F9;
-  position: relative;
 }
 .content-item{
   overflow-y: scroll;
+  width: 100%;
+  height: 100%;
+  /* 解决swiper 滑动迟滞的问题 */
+  -webkit-overflow-scrolling: touch; 
 }
 .tabbar{
   display: flex;
@@ -76,6 +78,7 @@ swiper {
 
 .order-content{
   width: 686rpx;
+  min-height: 500rpx;
   margin: 0 auto;
   padding: 23rpx 0 33rpx 0;
   background: #fff;
@@ -164,6 +167,9 @@ swiper {
   height:56rpx;
   border:1px solid #CCCCCC;
   border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .order-content .get .shopadders{
   display: flex;
@@ -244,10 +250,8 @@ swiper {
   color:rgba(51,51,51,1);
 }
 .norob{
-  padding-bottom: 480rpx;
-  margin-top: 304rpx;
+  padding-top: 304rpx;
   width: 100%;
-  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -266,7 +270,7 @@ swiper {
   width:120rpx;
   height:80rpx;
   background:#fff;
-  bottom: 50rpx;
+  bottom: 250rpx;
   right: 36rpx;
   line-height:60px;
   border-radius: 80rpx;
@@ -295,7 +299,4 @@ swiper {
   font-size: 24rpx;
   background: #F5F7F9;
   /* background: #F9CB08; */
-}
-swiper-item{
-  height: auto!important;
 }

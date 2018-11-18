@@ -217,7 +217,7 @@ Page({
       riderInfoId: app.globalData.userInfo.id
     },(res)=>{
       this.setData({
-        sendfood:res.data
+        sendfood: res.data,
       })
       setTimeout(() => {
         wx.stopPullDownRefresh();
@@ -231,7 +231,7 @@ Page({
     }, (res) => {
       console.log(res);
       this.setData({
-        sendlist: res.data
+        sendlist: res.data,
       })
       setTimeout(() => {
         wx.stopPullDownRefresh();
