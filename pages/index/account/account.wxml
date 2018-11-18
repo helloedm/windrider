@@ -1,0 +1,21 @@
+
+<view class='content'>
+  <view class='getmoney'>
+    <view class='today'>今日收入(元)</view>
+    <view class='todaymoney'>{{incomedata.todayIncome}}</view>
+    <view class='addmoney'>累计收入 {{incomedata.allIncome}}元</view>
+  </view>
+  <view class='account-money'>
+    <view>账户余额(元)</view>
+    <view>
+      <view>{{incomedata.balance}}元</view>
+      <view bindtap='getmoney'>提现</view>
+    </view>
+  </view>
+    <view class='account-money' bindtap='getmoneyrecord'>
+    <view>提现记录</view>
+    <view>
+      <image src='http://youxuan.ecbao.cn/material/1541410001471_66.png'></image>
+    </view>
+  </view>
+</view>

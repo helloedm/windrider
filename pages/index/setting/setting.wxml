@@ -1,0 +1,65 @@
+<wxs module="phoneslice">
+  module.exports=function(phone){
+    return phone.substring(0,3) + "******" +phone.substring(phone.length-4,phone.length)
+  }
+</wxs>
+
+<view class='content'>
+  <view class='setting'>设置</view>
+  <view class='line' bindtap='changeaccount'>
+    <view class='line-des'>当前账号</view>
+    <view class='line-content'>
+      <text class='phone'>{{phoneslice(phone)}}</text>
+      <image src="http://youxuan.ecbao.cn/material/1541410001471_66.png"></image>
+    </view>
+  </view>
+
+  <view class='line' bindtap='changepassword'>
+    <view class='line-des'>修改密码</view>
+    <view class='line-content'>
+      <!-- <text class='phone'>188****8888</text> -->
+      <image src="http://youxuan.ecbao.cn/material/1541410001471_66.png"></image>
+    </view>
+  </view>
+
+  <view class='line'>
+    <view class='line-des'>工作地区</view>
+    <view class='line-content'>
+      <text class='phone'>{{workzone}}</text>
+      <!-- <image src="http://youxuan.ecbao.cn/material/1541410001471_66.png"></image> -->
+    </view>
+  </view>
+
+  <view class='line'>
+    <view class='line-des'>服务商</view>
+    <view class='line-content'>
+      <text class='phone'>{{waiter}}</text>
+      <!-- <image src="http://youxuan.ecbao.cn/material/1541410001471_66.png"></image> -->
+    </view>
+  </view>
+
+  <view class='line'>
+    <view class='line-des'>身份认证</view>
+    <view class='line-content'>
+      <text class='phone red'>审核中/请上传身份证照</text>
+      <image src="http://youxuan.ecbao.cn/material/1541410001471_66.png"></image>
+    </view>
+  </view>
+
+  <view class='line' bindtap='backaccount'>
+    <view class='line-des blue'>退出账号</view>
+  </view>
+
+    <!-- 暂时跳过 -->
+  <block wx:if="{{isshowjump}}">
+    <view class='mask'>
+      <view class='alert'>
+        <view class='title'>你确定退出登录？</view>
+        <view class='button'>
+          <view bindtap='no'>取消</view>
+          <view bindtap='sure'>确定</view>
+        </view>
+      </view>
+    </view>
+  </block>
+</view>

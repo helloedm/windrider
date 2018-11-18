@@ -1,0 +1,19 @@
+<view class='content'>
+  <view class='setting'>新手机号</view>
+  <view class='line' bindtap='changeaccount'>
+    <input class='verification'
+           placeholder='请输入新手机号' 
+           bindinput="operateInput" 
+           data-prop="phone"
+           ></input>
+  </view>
+  <view class='line' bindtap='changeaccount'>
+    <input class='verification'
+           placeholder='请输入收到的验证码' 
+           bindinput="operateInput" 
+           data-prop="password"
+           ></input>
+    <view class='getverification' bindtap='getcode'>{{code}}</view>
+  </view>
+  <view class='next-step' bindtap='nextstep'>完成</view>
+</view>

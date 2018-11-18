@@ -1,0 +1,21 @@
+<!--pages/index/getmoneyrecord/getmoneyrecord.wxml-->
+<!-- <text>pages/index/getmoneyrecord/getmoneyrecord.wxml</text> -->
+<wxs module="absolute">
+  module.exports=function(m){
+    return Math.abs(m)
+  }
+</wxs>
+<view class='content'>
+  <view class='record' wx:for="{{withdrawRecord}}" wx:key="{{index}}">
+    <view class='record-time' style='margin-top:24rpx;'>
+      <view class='time'>提现时间：{{item.createDate}}</view>
+      <view class='rmb'>{{absolute(item.money)}}元</view>
+    </view>
+    <view class='record-time'>
+      <view class='time'>提现账户：支付宝{{item.cardNumber}}</view>
+    </view>
+    <view class='success' wx:if='{{item.status==0}}' style="background:rgba(249,203,8,0.1);color:#F9CB08;">申请提现</view>
+    <view class='success' wx:if='{{item.status==1}}'>提现成功</view>
+    <view class='success' wx:if='{{item.status==2}}' style="background:rgba(255,86,107,0.1);color:#FF566B;">拒绝</view>    
+  </view>
+</view>

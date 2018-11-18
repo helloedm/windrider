@@ -1,0 +1,35 @@
+<view class='content'>
+  <view class='inner-content'>
+    <view class='title'>提现金额</view>
+    <view class='moneyinput'>
+      <view>￥</view>
+      <input placeholder='请输入提款金额' 
+             placeholder-style="font-size:34rpx;"
+             bindinput="operateInput" 
+             data-prop="wantmoney"
+             value='{{wantmoney}}' 
+             type="number"></input>
+    </view>
+    <view class='moneycanget'>
+      <view class='allmoney'>可提现金额：{{allmoney}}元</view>
+      <view class='allget' bindtap='wangtall'>全部提现</view>
+    </view>
+  </view>
+</view>
+
+<view class='alipay'>
+  <view class='pay'>
+    <view class='line'></view>
+    <view class='linedes'>提现至</view>
+  </view>
+  <view class='payway'>
+    <view class='zfb'>
+      <image src="http://youxuan.ecbao.cn/material/1542349385700_66.png"></image>
+      <view class='account'>支付宝</view>
+      <view class='number'>{{account}}</view>
+    </view>
+    <image src="http://youxuan.ecbao.cn/material/1542349443295_13.png" class='edit' bindtap='editaccount'></image>
+  </view>
+
+  <view class='getmoney' bindtap='suregetmoney'>确认提现</view>
+</view>

@@ -1,0 +1,38 @@
+<!-- <view class="back" bindtap="back">返回</view> -->
+<view bindtap="chooseRegion"></view>
+<region-picker
+    region-value="{{regionValue}}"
+    show-region="{{showRegion}}"
+    area-place="{{areaPlace}}"
+    bind:myevent="emitHideRegion">
+</region-picker>
+
+<view class="passwordlogin">
+    <view class="password_login">你需要填写身份信息</view>
+    <view class="phone_login">用来<text>实名认证</text></view>
+</view>
+  
+<view class="phone_haschecked" style='margin-top:75rpx;'>
+  <input  placeholder="请选择服务商地区" placeholder-style="color:#ccc;font-size:32rpx;" bindtap="chooseRegion"   value='{{zone}}' disabled="true"/>
+  <view class='arrows'></view>
+</view>
+<view class="phone_haschecked" style='margin-top:17rpx;' bindtap='ischose'>
+  <picker bindchange="bindPickerChange" value="{{agentindex}}" range="{{agentarray}}" disabled = '{{zoneischose}}'>
+    <input placeholder="请选择服务商" placeholder-style="color:#ccc;font-size:32rpx;" disabled="true" value='{{agentname}}'/>
+  </picker>
+  <view class='arrows'></view>
+</view>
+<view class="phone_haschecked" style='margin-top:17rpx;'>
+  <input placeholder="真实姓名" placeholder-style="color:#ccc;font-size:32rpx;" value='{{realname}}' bindinput="operateInput"  data-prop="realname"/>
+</view>
+<view class="phone_haschecked" style='margin-top:17rpx;'>
+  <input placeholder="身份证号" placeholder-style="color:#ccc;font-size:32rpx;" value='{{idcard}}' bindinput="operateInput"  data-prop="idcard"/>
+</view>
+
+<view class='enter' bindtap='nextstep'>下一步</view>
+
+
+
+<!-- <view class='password-forget' bindtap="passwordforget">忘记密码？</view> -->
+
+<!-- <view class='become-ride' bindtap="becomehorseman">成为骑手</view> -->

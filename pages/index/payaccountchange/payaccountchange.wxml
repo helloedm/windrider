@@ -1,0 +1,21 @@
+<!--pages/index/payaccountchange/payaccountchange.wxml-->
+<view class='content'>
+  <view class='title'>{{title}}</view>
+  <view class='realname'>
+    <view class='real'>真实姓名</view>
+    <view class='name'>小新</view>
+  </view>
+
+  <view class='alilipayaccount'>
+    <view class='alipay'>支付宝账户</view>
+    <input placeholder='请输入新支付宝账号' placeholder-style='color:#CCCCCC;font-size:32rpx;' class='account' value='{{account}}' bindinput="operateInput" data-prop="account"></input>
+  </view>
+
+  <view class='clause'>
+    <view>1.支付宝账户必须与用户信息绑定的真实姓名一致。</view>
+    <view>2.只能绑定1个支付宝账户，可以更改。</view>
+    <view>3.每日只能更改一次支付宝账户。</view>
+  </view>
+
+  <view class='change' bindtap='change'>{{ischange}}</view>
+</view>

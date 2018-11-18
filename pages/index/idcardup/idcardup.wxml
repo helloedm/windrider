@@ -1,0 +1,44 @@
+<view class="content">
+  <view class='jump' bindtap='jumpmoment'>暂时跳过</view>
+  <view class='hello'>你好，<open-data type="userNickName" lang="zh_CN"></open-data></view>
+  <view class='up'>你需要上传身份证照，等待审核后才可接单</view>
+  <view class='des'>请务必使用本人身份证，注意证件完整和本人面孔清晰可见。提交的资料仅用于实名认证，请放心上传</view>
+  <!-- 身份证正面照 -->
+  <view class='idcard-front' bindtap='choseimg' data-type="0">
+    <image src='{{idcardfront}}' mode="widthFix" class='bigimg'></image>
+    <view class='des'>
+      <image class='camera' src='http://youxuan.ecbao.cn/material/1541065742041_42.png' mode="widthFix" ></image>
+      <text>拍身份证正面照</text>
+    </view>
+  </view>
+  <!-- 身份证反面照 -->
+  <view class='idcard-after' bindtap='choseimg' data-type="1">
+    <image src='{{idcardafter}}' mode="widthFix" class='bigimg'></image>
+    <view class='des'>
+      <image class='camera' src='http://youxuan.ecbao.cn/material/1541065742041_42.png' mode="widthFix" ></image>
+      <text>拍身份证反面照</text>
+    </view>
+  </view>
+  <!-- 身份证手持照 -->
+  <view class='idcard-hand' bindtap='choseimg' data-type="2">
+    <image src='{{idcardhand}}' mode="widthFix" class='bigimg'></image>
+    <view class='des'>
+      <image class='camera' src='http://youxuan.ecbao.cn/material/1541065742041_42.png' mode="widthFix" ></image>
+      <text>拍手持身份证照</text>
+    </view>
+  </view>
+  <view class='upload' bindtap='upimage'>上传审核照片</view>
+
+  <!-- 暂时跳过 -->
+  <block wx:if="{{isshowjump}}">
+    <view class='mask'>
+      <view class='alert'>
+        <view class='title'>确认暂不上传身份证照？</view>
+        <view class='button'>
+          <view bindtap='upload'>先逛逛看</view>
+          <view bindtap='upload'>上传证件照</view>
+        </view>
+      </view>
+    </view>
+  </block>
+</view>

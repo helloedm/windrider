@@ -1,0 +1,6 @@
+<view class='content'>
+  <view class="success">重置成功</view>
+  <image src="http://youxuan.ecbao.cn/material/1541055349798_12.png"></image>
+  <view class="success-login">密码重置成功，请登录</view>
+  <view class='back-login' bindtap='backlogin'>回到登录页</view>
+</view>

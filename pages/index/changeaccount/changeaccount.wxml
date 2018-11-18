@@ -1,0 +1,20 @@
+<wxs module="phoneslice" >
+  module.exports=function(phone) {
+    return phone.substring(0, 3) + "******" + phone.substring(phone.length - 4, phone.length)
+  }
+</wxs>
+
+<view class='content'>
+  <view class='setting'>更换手机号</view>
+  <view class='line' bindtap='changeaccount'>
+    <view class='line-des'>{{phoneslice(phone)}}</view>
+  </view>
+  <view class='line' bindtap='changeaccount'>
+    <input class='verification' 
+           placeholder='请输入收到的验证码' 
+           bindinput="operateInput" 
+           data-prop="password"></input>
+    <view class='getverification' bindtap='getcode'>{{code}}</view>
+  </view>
+  <view class='next-step' bindtap='nextstep'>下一步</view>
+</view>

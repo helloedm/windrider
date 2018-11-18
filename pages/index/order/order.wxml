@@ -1,0 +1,144 @@
+<wxs module="slicesendtime">
+module.exports=function(time){
+    return time.split(' ')[1].split(':')[0]+":"+time.split(' ')[1].split(':')[1]
+}
+</wxs>
+<wxs module="mtokm">
+module.exports=function(m){
+    var distance = m/1000
+    return distance.toFixed(2)
+}
+</wxs>
+<wxs module="absolute">
+  module.exports=function(m){
+    return Math.abs(m)
+  }
+</wxs>
+
+
+<view class="contain">
+ <!-- 导航栏 -->
+ <scroll-view class="tab" scroll-x scroll-left="{{tabScroll}}" scroll-with-animation="true">
+  <!-- <view class='personal-center' bindtap='personalcenter'></view> -->
+  <view class='tabbar'>
+    <block wx:for="{{menuList}}" wx:key="index">
+      <view class="tab-item {{currentTab == index ? 'active' : ''}}" data-current="{{index}}" bindtap='clickMenu'>{{item.name}}</view>
+    </block>
+  </view>
+ </scroll-view>
+
+ <!-- 页面 -->
+ <swiper class="content" duration="500" current="{{currentTab}}" bindchange="changeContent">
+ <!-- 已完成 -->
+    <swiper-item class="content-item">
+      <view style='background:#fff;margin-bottom:32rpx;' wx:for='{{finishlist}}' wx:key='{{index}}'>
+        <view class='order-content'>
+          <view class='limit'>
+            <view style='display:flex;align-items:center;'>
+              <view class='sign'></view>
+              <text>
+                <text class='limit-time'>{{slicesendtime(item.arrivedTime)}}送达</text>
+                <text class='arrive-time' wx:if='{{item.presetTime >= 0}}'>(正常送达)</text>
+                <text class='arrive-time' style="color:#FF5400;" wx:else>(超时{{absolute(item.presetTime)}}分钟)</text>
+              </text>
+            </view>
+            <view>
+              <text>
+                <text class='amount'>{{item.money}}</text>
+                <text class='rmb'>元</text>
+              </text>
+            </view>
+          </view>
+          <view class='get'>
+            <view class='shopname'>
+              <view class="get-button">取
+              </view>
+              <view class='get-name'>{{item.shopName}}</view>         
+            </view>
+            <view class='shopadders'>
+              <view class='adders'>{{item.shopAddress}}</view>
+            </view>
+          </view>
+          <!-- 送 -->
+          <view class='get' style='margin-top:42rpx;'>
+            <view class='shopname'>
+              <view class="get-button">送
+              </view>
+              <view class='get-name'>{{item.buyerName}}（{{item.distance}}m）</view>         
+            </view>
+            <view class='shopadders'>
+              <view class='adders'>{{item.buyerAddress}}</view>
+            </view>
+          </view>
+          <!-- 查看订单详情  -->
+          <!-- <view class='checkorder' wx:if='{{item.presetTime < 0}}'>查看订单详情 ></view> -->
+        </view>
+      </view>
+    </swiper-item>
+<!-- 投诉 -->
+    <swiper-item class="content-item">
+      <view style='background:#fff;'>
+        <view class='order-content'>
+          <view class='limit'>
+            <view style='display:flex;align-items:center;'>
+              <view class='sign'></view>
+              <text>
+                <text class='limit-time'>18:00:00送达</text>
+                <text class='arrive-time'>(正常送达)</text>
+              </text>
+            </view>
+            <view>
+              <text>
+                <text class='amount'>5</text>
+                <text class='rmb'>元</text>
+              </text>
+            </view>
+          </view>
+
+          <view class='limit' style='margin-top:36rpx;'>
+            <view style='display:flex;align-items:center;'>
+              <view class='sign' style='opacity:0;'></view>
+              <text>
+                <text class='limit-time'>被投诉原因: </text>
+                <text class='arrive-time' style='color:#FF2020;'>态度恶劣/其它</text>
+              </text>
+            </view>
+          </view>
+
+          <view class='limit' style='margin-top:36rpx;padding-bottom:35rpx;border-bottom:1px solid #EAEAEA;'>
+            <view style='display:flex;align-items:center;'>
+              <view class='sign' style='opacity:0;'></view>
+              <text>
+                <text class='limit-time'>申诉结果: </text>
+                <text class='arrive-time' style='color:#FF2020;font-size:40rpx;'>失败，扣3元配送费</text>
+              </text>
+            </view>
+          </view>
+          <view class='get' style='margin-top:36rpx;'>
+            <view class='shopname'>
+              <view class="get-button">取
+              </view>
+              <view class='get-name'>轻井泽(文三路店)(800m)</view>         
+            </view>
+            <view class='shopadders'>
+              <view class='adders'>西湖区崇义路郡原公元里6栋6楼</view>
+            </view>
+          </view>
+          <!-- 送 -->
+          <view class='get' style='margin-top:42rpx;padding-bottom:35rpx;'>
+            <view class='shopname'>
+              <view class="get-button">送
+              </view>
+              <view class='get-name'>马**（4km）</view>         
+            </view>
+            <view class='shopadders'>
+              <view class='adders'>西湖区崇义路郡原公元里6栋6楼</view>
+            </view>
+          </view>
+          <!-- 查看订单详情  -->
+          <!-- <view class='checkorder'>查看订单详情 ></view> -->
+        </view>
+      </view>
+    </swiper-item>
+ </swiper>
+</view>

@@ -1,0 +1,100 @@
+/* pages/index/apply/apply.wxss */
+page{
+  background: #F5F7F9;
+  height: 100%;
+}
+.content{
+  background: #fff;
+}
+.content .in-content{
+  width: 686rpx;
+  margin: 0 auto;
+  padding: 32rpx 0;
+  margin-top: 24rpx;
+  display: none;
+}
+.content .time{
+  display: flex;
+  margin-bottom: 16rpx;
+}
+.content .time .des{
+  font-size:28rpx;
+  display: block;
+  width: 185rpx;
+  color:rgba(153,153,153,1);
+}
+.content .time .time{
+  font-size:28rpx;
+  color:#333333;
+}
+.in-content .info{
+  background: #F9F9F9;
+  overflow: hidden;
+  padding: 30rpx 24rpx;
+}
+.in-content .info .shop-adders{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.in-content .info .shop-adders .get{
+  min-width:40rpx;
+  height:40rpx;
+  font-size: 28rpx;
+  text-align: center;
+  line-height: 40rpx;
+  background:rgba(13,13,13,1);
+  color: #fff;
+  border-radius: 50%;
+  position: relative;
+}
+.in-content .info .shop-adders .adders{
+  margin-left: 24rpx;
+  font-size:30rpx;
+  color:rgba(51,51,51,1);
+}
+.in-content .info .shop-adders .rmb{
+  font-size:34rpx;
+  color:rgba(51,51,51,1);
+}
+.shop-name{
+  font-size:24rpx;
+  color:rgba(153,153,153,1);
+  margin-top: 8rpx;
+  padding-left: 64rpx;
+}
+.downline{
+  position: absolute;
+  width: 1px;
+  height: 72rpx;
+  top: 40rpx;
+  left: 50%;
+  z-index: 9;
+  background: #0D0D0D;
+}
+.upline{
+  position: absolute;
+  width: 1px;
+  height: 72rpx;
+  bottom: 40rpx;
+  left: 50%;
+  z-index: 9;
+  background: #0D0D0D;
+}
+.nodata{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.nodata image{
+  width: 235rpx;
+}
+.nodata .nodatades{
+  font-size:36rpx;
+  font-weight:500;
+  color:rgba(53,53,53,1);
+  margin-top: 40rpx;
+}

@@ -1,0 +1,41 @@
+/* pages/index/getmoneyrecord/getmoneyrecord.wxss */
+page{
+  height: 100%;
+  background: #F5F7F9;
+}
+.content{
+  background: #fff;
+}
+.content .record{
+  width: 686rpx;
+  margin: 0 auto;
+  font-size:28rpx;
+  color:rgba(51,51,51,1);
+  margin-top: 24rpx;
+  padding-bottom: 24rpx;
+  border-bottom: 1px solid #EEEEEE;
+  overflow: hidden;
+}
+.content .record .record-time{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8rpx;
+}
+.content .record .record-time .rmb{
+  font-size:34rpx;
+  font-weight:bold;
+  color:rgba(51,51,51,1);
+  line-height:48rpx;
+}
+.success{
+  width:128rpx;
+  height:40rpx;
+  text-align: center;
+  line-height: 40rpx;
+  background:rgba(73,204,147,0.1);
+  border-radius:2px;
+  font-size:28rpx;
+  color:rgba(73,204,147,1);
+  margin-top: 24rpx;
+}

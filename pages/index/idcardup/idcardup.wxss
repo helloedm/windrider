@@ -1,0 +1,175 @@
+.content{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.content .jump{
+  font-size:34rpx;
+  font-weight:500;
+  color:rgba(102,102,102,1);
+  text-align: right;
+  padding-right: 60rpx;
+  align-self: flex-end;
+}
+.content .hello{
+  font-size:34rpx;
+  font-weight:500;
+  color:#333333;
+  text-align: left;
+  padding-left: 60rpx;
+  align-self: flex-start;
+}
+.content .up{
+  font-size:40rpx;
+  font-weight:bold;
+  color:rgba(51,51,51,1);
+  width: 613rpx;
+  margin: 0 auto;
+  margin-top: 89rpx;
+}
+.content .des{
+  font-size:26rpx;
+  color:#999999;
+  width: 613rpx;
+  margin: 0 auto;
+  margin-top: 35rpx;
+}
+.idcard-front,.idcard-after,.idcard-hand{
+  width:630rpx;
+  height:378rpx;
+  background:rgba(234,234,234,1);
+  margin-top: 48rpx;
+  overflow: hidden;
+  position: relative;
+}
+.idcard-front .bigimg{
+  width:630rpx;
+}
+.idcard-after .bigimg{
+  width:630rpx;
+}
+.idcard-hand .bigimg{
+  width:630rpx;
+}
+.idcard-front .des{
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 630rpx;
+  height: 88rpx;
+  background: rgba(0,0,0,0.6);
+  font-size:34rpx;
+  font-weight:500;
+  color:rgba(255,255,255,1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.idcard-front .des .camera{
+  width: 54rpx;
+  height: 48rpx;
+  margin-right: 23rpx;
+}
+.idcard-after .des{
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 630rpx;
+  height: 88rpx;
+  background: rgba(0,0,0,0.6);
+  font-size:34rpx;
+  font-weight:500;
+  color:rgba(255,255,255,1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.idcard-after .des .camera{
+  width: 54rpx;
+  height: 48rpx;
+  margin-right: 23rpx;
+}
+.idcard-hand .des{
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 630rpx;
+  height: 88rpx;
+  background: rgba(0,0,0,0.6);
+  font-size:34rpx;
+  font-weight:500;
+  color:rgba(255,255,255,1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.idcard-hand .des .camera{
+  width: 54rpx;
+  height: 48rpx;
+  margin-right: 23rpx;
+}
+.upload{
+  width:630rpx;
+  height:88rpx;
+  background:rgba(37,161,255,.6);
+  border-radius:4px;
+  line-height: 88rpx;
+  text-align: center;
+  color: #fff;
+  font-size: 34rpx;
+  margin: 60rpx 0;
+}
+
+.mask{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.mask .alert{
+  position: absolute;
+  width:630rpx;
+  height:291rpx;
+  background:rgba(255,255,255,1);
+  box-shadow:0px 3px 9px 0px rgba(0, 0, 0, 0.3);
+  border-radius:18rpx;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.mask .alert .title{
+  width: 100%;
+  height: 192rpx;
+  font-size:36rpx;
+  font-weight:500;
+  color:rgba(51,51,51,1);
+  line-height:192rpx;
+  text-align: center;
+}
+.mask .alert .button{
+  display: flex;
+  justify-content: space-between;
+}
+.mask .alert .button view{
+  width: 50%;
+  height: 102rpx;
+  text-align: center;
+  line-height: 102rpx;
+  font-size:34rpx;
+  font-weight:500;
+  color:rgba(102,102,102,1);
+}
+.mask .alert .button view:nth-child(1){
+  border-top: 1px solid #EAEAEA;
+}
+.mask .alert .button view:nth-child(2){
+  background: #25A1FF;
+  color: #fff;
+  border-bottom-right-radius: 18rpx;
+}

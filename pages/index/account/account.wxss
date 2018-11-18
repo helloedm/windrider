@@ -1,0 +1,64 @@
+page{
+  height: 100%;
+  background: #F5F7F9;
+}
+.content{
+  background: #fff;
+  overflow: hidden;
+  margin-top: 24rpx;
+  padding-bottom: 32rpx;
+}
+.getmoney{
+  width:686rpx;
+  height:354rpx;
+  background:linear-gradient(6deg,rgba(214,185,137,1) 0%,rgba(224,208,173,1) 100%);
+  border-radius:24rpx;
+  margin: 0 auto;
+  margin-top: 32rpx;
+  overflow: hidden;
+}
+.getmoney .today{
+  font-size:28rpx;
+  color:rgba(255,255,255,1);
+  margin: 40rpx 0 16rpx 64rpx;
+}
+.getmoney .todaymoney{
+  font-size:72rpx;
+  color:rgba(255,255,255,1);
+  margin: 0 0 31rpx 64rpx;
+  width: 575rpx;
+  padding-bottom: 40rpx;
+  border-bottom: 1px solid rgba(255,255,255,0.4);
+}
+.getmoney .addmoney{
+  font-size:34rpx;
+  color:rgba(255,255,255,1);
+  margin: 0 0 0 64rpx;
+}
+.account-money{
+  display: flex;
+  justify-content: space-between;
+  margin-left: 32rpx;
+  font-size:34rpx;
+  color:rgba(51,51,51,1);
+  padding: 28rpx 0;
+  border-bottom: 1px solid #EEEEEE;
+}
+.account-money view:last-child{
+  display: flex;
+  align-items: center;
+}
+.account-money view:last-child view:first-child{
+  font-size:32rpx;
+  color:rgba(51,51,51,1);
+}
+.account-money view:last-child view:last-child{
+  font-size:32rpx;
+  color:rgba(249,203,8,1);
+  margin: 0 72rpx 0 24rpx;
+}
+.account-money view:last-child image{
+  width: 16rpx;
+  height: 26rpx;
+  margin-right: 32rpx;
+}

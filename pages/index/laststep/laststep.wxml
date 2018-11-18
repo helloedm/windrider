@@ -1,0 +1,28 @@
+<!-- <view class="back" bindtap="back">上一步</view> -->
+
+<view class="passwordlogin">
+    <view class="password_login">你需要填写个人信息</view>
+    <view class="phone_login">用来<text>账号登录</text></view>
+</view>
+  
+<view class="phone_haschecked" style='margin-top:75rpx;'>
+  <input  placeholder="请输入手机号" placeholder-style="color:#ccc;font-size:32rpx;" value='{{phone}}' bindinput="operateInput" bindblur='checkData' data-prop="phone"/>
+</view>
+<view class="phone_haschecked" style='margin-top:17rpx;'>
+  <input  password  placeholder="请输入验证码" placeholder-style="color:#ccc;font-size:32rpx;" value='{{getcode}}' bindinput="operateInput" bindblur='checkData' data-prop="getcode"/>
+  <view class='arrows' bindtap='getcode'>{{code}}</view>
+</view>
+<view class="phone_haschecked" style='margin-top:17rpx;'>
+  <input  password  placeholder="请输入密码 " placeholder-style="color:#ccc;font-size:32rpx;" value='{{password}}' bindinput="operateInput" bindblur='checkData' data-prop="password"/>
+</view>
+<view class="phone_haschecked" style='margin-top:17rpx;'>
+  <input  password  placeholder="骑手邀请码（可不填）" placeholder-style="color:#ccc;font-size:32rpx;" value='{{invitecode}}' bindinput="operateInput" bindblur='checkData' data-prop="invitecode"/>
+</view>
+
+<view class='finish' bindtap='useragreement'>完成注册即表示同意<text>《用户协议》</text></view>
+
+<view class='enter' bindtap='nextstep'>完成注册</view>
+
+<!-- <view class='password-forget' bindtap="passwordforget">忘记密码？</view> -->
+
+<!-- <view class='become-ride' bindtap="becomehorseman">成为骑手</view> -->

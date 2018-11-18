@@ -1,0 +1,59 @@
+{
+	"description": "项目配置文件。",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": true,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.4.0",
+	"appid": "wx8a83fa117f73b249",
+	"projectname": "%E5%94%AF%E7%88%B1%E4%BC%8A000000",
+	"isGameTourist": false,
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 0,
+			"list": [
+				{
+					"id": 0,
+					"name": "提现",
+					"pathName": "pages/index/payaccountchange/payaccountchange",
+					"query": ""
+				},
+				{
+					"id": 1,
+					"name": "申诉",
+					"pathName": "pages/index/apply/apply",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "idcardup",
+					"pathName": "pages/index/idcardup/idcardup",
+					"query": ""
+				}
+			]
+		}
+	}
+}

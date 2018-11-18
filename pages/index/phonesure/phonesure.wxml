@@ -1,0 +1,20 @@
+<!-- <view class="back" bindtap="back">返回</view> -->
+
+<view class="passwordlogin">
+    <view class="password_login">确认手机</view>
+    <!-- <view class="phone_login" bindtap="phonelogin">密码登录</view> -->
+</view>
+  
+<view class="phone_haschecked" style='margin-top:77rpx;'>
+  <input  placeholder="请输入已验证的手机号" placeholder-style="color:#ccc;font-size:32rpx;" value='{{phone}}' bindinput="operateInput" bindblur='checkData' data-prop="phone"/>
+</view>
+<view class="phone_haschecked" style='margi-top:17rpx;'>
+  <input placeholder="请输入验证码" placeholder-style="color:#ccc;font-size:32rpx;" value='{{password}}' bindinput="operateInput" bindblur='checkData' data-prop="password"/>
+  <view class='getcode' bindtap='getcode'>{{code}}</view>
+</view>
+
+<view class='enter' bindtap="nextstep">下一步</view>
+
+<!-- <view class='password-forget'>忘记密码？</view> -->
+
+<!-- <view class='become-ride'>成为骑手</view> -->

@@ -1,0 +1,2 @@
+<!--pages/index/user_agreement/user_agreement.wxml-->
+<image src="{{src}}" mode='widthFix'></image>

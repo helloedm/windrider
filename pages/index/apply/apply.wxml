@@ -1,0 +1,55 @@
+<!--pages/index/apply/apply.wxml-->
+<view class='content'>
+  <view class='in-content'>
+    <view class='time'>
+      <view class='des'>预定送达时间: </view>
+      <view class='time'>2018-10-12 12:00</view>
+    </view>
+
+
+    <view class='time'>
+      <view class='des'>实际送达时间: </view>
+      <view class='time'>
+        <view>2018-10-12 12:00</view>
+        <view style='color:#FF3222;'>(超时5分钟)</view>
+      </view>
+    </view>
+
+    <view class='time'>
+      <view class='des'>被投诉原因: </view>
+      <view class='time'>态度恶劣/其他</view>
+    </view>
+
+    <view class='time'>
+      <view class='des'>申诉结果:  </view>
+      <view style='color:#FF3222;' class='time'>失败，扣3元配送费</view>
+    </view>
+
+    <view class='info'>
+      <view class='shop-adders'>
+        <view style='display:flex;'>
+            <view class='get'>取
+              <view class='downline'></view>
+            </view>
+            <view class='adders'>轻井泽(文三路店）</view>
+        </view>
+        <view class='rmb'>6元</view>
+      </view>
+      <view class='shop-name'>西湖区 崇义路 郡原公元里6栋6楼</view>
+
+      <view class='shop-adders' style='margin-top:28rpx;'>
+        <view style='display:flex;align-items:center;'>
+            <view class='get'>送
+              <view class='upline'></view>
+            </view>
+            <view class='adders' style='color:#999999;font-size:24rpx;'>西湖区 文一西路 郡原公元里6栋6楼</view>
+        </view>
+    </view>
+    </view>
+  </view>
+</view>
+
+<view class='nodata'>
+  <image src='http://youxuan.ecbao.cn/material/1542444848401_44.png' mode='widthFix'></image>
+  <view class='nodatades'>暂无申诉订单~</view>
+</view>

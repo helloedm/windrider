@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "",
+  "backgroundColorTop": "#fff",
+  "backgroundColorBottom": "#fff",
+  "backgroundColor": "#fff",
+  "usingComponents": {
+    "region-picker": "/componments/adderschoose/adderschoose"
+  }
+}

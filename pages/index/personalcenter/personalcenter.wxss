@@ -1,0 +1,58 @@
+.personal-content{
+  width: 686rpx;
+  margin: 0 auto;
+}
+.personal-content .user-info{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 75rpx 0;
+}
+.personal-content .user-info .user-image{
+  width: 140rpx;
+  height: 140rpx;
+  border-radius: 50%;
+  background: #ccc;
+  overflow: hidden;
+}
+.personal-content .user-info .user-name{
+  font-size:40rpx;
+  font-weight:bold;
+  color:rgba(51,51,51,1);
+  margin-top: 30rpx;
+}
+.personal-content .user-info .user-phone{
+  font-size:28rpx;
+  color:rgba(51,51,51,1);
+  margin-top: 30rpx;
+}
+.order-list{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 66rpx;
+}
+.order-list .first{
+  width: 36rpx;
+  height: 36rpx;
+}
+.order-list .second{
+  width: 12rpx;
+  height: 20rpx;
+}
+.order-list .des{
+  font-size:32rpx;
+  color:rgba(51,51,51,1);
+  margin-left: 25rpx;
+}
+.order-list .left{
+  display: flex;
+  align-items: center;
+}
+.invite-code{
+  font-size:28rpx;
+  color:rgba(102,102,102,1);
+  text-align: center;
+  margin-top: 85rpx;
+}

@@ -1,0 +1,58 @@
+/* pages/index/payaccountchange/payaccountchange.wxss */
+.content{
+  width: 678rpx;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.content .title{
+  font-size:40rpx;
+  font-weight:bold;
+  color:rgba(51,51,51,1);
+  margin-top: 86rpx;
+  margin-bottom: 113rpx;
+}
+.realname,.alilipayaccount{
+  display: flex;
+  font-size:32rpx;
+  color:rgba(51,51,51,1);
+  padding-bottom: 36rpx;
+  border-bottom: 1px solid #eaeaea;
+}
+.realname .real{
+  width: 155rpx;
+  margin-right: 35rpx;
+}
+.realname .name{
+  font-size:32rpx;
+  color:rgba(102,102,102,1);
+}
+
+.alilipayaccount{
+  margin-top: 53rpx;
+  align-items: center;
+}
+.alilipayaccount .alipay{
+  width: 155rpx;
+  margin-right: 35rpx;
+}
+.alilipayaccount .account{
+  font-size:32rpx;
+  color:rgba(102,102,102,1);
+}
+.clause{
+  margin-top: 48rpx;
+  font-size:26rpx;
+  color:rgba(153,153,153,1);
+  line-height:40rpx;
+}
+.change{
+  width:678rpx;
+  height:88rpx;
+  line-height: 88rpx;
+  text-align: center;
+  background:rgba(37,161,255,1);
+  border-radius:4px;
+  font-size:34rpx;
+  color:rgba(255,255,255,1);
+  margin-top: 89rpx;
+}

@@ -1,0 +1,37 @@
+{
+  "pages":[
+    "pages/index/passwordlogin/passwordlogin",  
+    "pages/index/phonelogin/phonelogin",
+    "pages/index/phonesure/phonesure",
+    "pages/index/resetpassword/resetpassword",
+    "pages/index/resetsuccess/resetsuccess",
+    "pages/index/becomehorseman/becomehorseman",
+    "pages/index/laststep/laststep",
+    "pages/index/idcardup/idcardup",
+    "pages/index/user_agreement/user_agreement",
+    "pages/index/index",
+    "pages/index/personalcenter/personalcenter",
+    "pages/index/account/account",
+    "pages/index/getmoneyrecord/getmoneyrecord",
+    "pages/index/order/order",
+    "pages/index/rule/rule",
+    "pages/index/setting/setting",
+    "pages/index/changeaccount/changeaccount",
+    "pages/index/changephone/changephone",
+    "pages/index/changepassword/changepassword",
+    "pages/index/apply/apply",
+    "pages/index/map/map",
+    "pages/index/drivemap/drivemap",
+    "pages/index/getmoney/getmoney",
+    "pages/index/payaccountchange/payaccountchange",
+    "pages/canvas/canvas",
+    "pages/logs/logs"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "风达",
+    "navigationBarTextStyle":"black"
+  },
+  "functionalPages": true
+}

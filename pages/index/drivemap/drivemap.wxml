@@ -1,0 +1,9 @@
+<!--绑定点击事件-->
+<button bindtap="getride">路线规划</button>
+<!--地图容器-->
+ <map
+   id="myMap"
+   scale='16'
+   polyline="{{polyline}}"
+   show-location
+ ></map>

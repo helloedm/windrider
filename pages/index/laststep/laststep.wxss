@@ -1,0 +1,102 @@
+.passwordlogin{
+    display: flex;
+    flex-direction: column;
+    margin-top: 72rpx;
+    font-size:40rpx;
+    font-weight:bold;
+    color:rgba(51, 51, 51, 1);
+    padding: 0 61rpx 0 59rpx;
+}
+.passwordlogin .phone_login text{
+    font-size:40rpx;
+    font-weight:500;
+    color:#25A1FF;
+}
+.phone_haschecked{
+    width: 630rpx;
+    height: 102rpx;
+    margin: 0 auto;
+    border-bottom: 1px solid #EAEAEA;
+    display: flex;
+    align-items: center;
+}
+.phone_haschecked .arrows{
+  width: 180rpx;
+  height: 100%;
+  line-height: 102rpx;
+  font-size:28rpx;
+  font-weight:500;
+  color:rgba(102,102,102,1);
+}
+.phone_haschecked input{
+    width: 100%;
+}
+.enter{
+  width:630rpx;
+  height:88rpx;
+  background:rgba(37,161,255,1);
+  opacity:0.6;
+  border-radius:4px;
+  margin: 0 auto;
+  margin-top: 35rpx;
+  text-align: center;
+  line-height: 88rpx;
+  color: #fff;
+  font-size: 34rpx;
+}
+.password-forget{
+  width:630rpx;
+  font-size:26rpx;
+  margin: 0 auto;
+  margin-top: 47rpx;
+  color:rgba(153,153,153,1);  
+}
+.become-ride{
+  width:630rpx;
+  font-size:30rpx;
+  font-weight:500;
+  color:rgba(37,161,255,1);
+  margin: 0 auto;
+  margin-top: 482rpx;
+  display: flex;
+  align-items: center;
+}
+.become-ride:after {
+    margin-left: 6rpx;
+    content: '';
+    display: inline-block;
+    width: 12rpx;
+    height: 12rpx;
+    border-top: 1px solid rgba(37,161,255,1);
+    border-right: 1px solid rgba(37,161,255,1);
+    transform: rotate(45deg);
+    webkit-transform: rotate(-45deg);
+} 
+.back{
+  font-size:34rpx;
+  font-weight:500;
+  color:rgba(51,51,51,1);
+  margin-left: 36rpx;
+}
+.back:before{
+  margin-left: 6rpx;
+  content: '';
+  display: inline-block;
+  width: 20rpx;
+  height: 20rpx;
+  border-top: 2px solid #666666;
+  border-right: 2px solid #666666;
+  transform: rotate(-135deg);
+  webkit-transform: rotate(-135deg);
+}
+.finish{
+  width: 630rpx;
+  margin: 0 auto;
+  font-size:26rpx;
+  font-weight:500;
+  color:rgba(153,153,153,1);
+  margin-top: 285rpx;
+}
+.finish text{
+  color: #25A1FF;
+}

@@ -1,0 +1,58 @@
+
+
+<view class="personal-content">
+  <view class='user-info'>
+
+    <view class="user-image">
+      <open-data class="avatar-img" type="userAvatarUrl" lang="zh_CN"></open-data>
+    </view>
+
+    <view class="user-name">
+      <open-data type="userNickName" lang="zh_CN"></open-data>
+    </view>
+
+    <view class="user-phone">{{riderInfo.phone}}</view>
+  </view>
+
+  <view class='order-list' bindtap='account'>
+    <view class='left'>
+        <image src="http://youxuan.ecbao.cn/material/1541410023438_6.png" class='first'></image>
+        <view class='des'>账户</view>
+    </view>
+    <image src="http://youxuan.ecbao.cn/material/1541410001471_66.png" class='second'></image>
+  </view>
+
+  <view class='order-list' bindtap='order'>
+    <view class='left'>
+        <image src="http://youxuan.ecbao.cn/material/1541410035999_83.png" class='first'></image>
+        <view class='des'>订单</view>
+    </view>
+    <image src="http://youxuan.ecbao.cn/material/1541410001471_66.png" class='second'></image>
+  </view>
+
+  <view class='order-list' bindtap='rule'>
+    <view class='left'>
+        <image src="http://youxuan.ecbao.cn/material/1541410027613_31.png" class='first'></image>
+        <view class='des'>规则</view>
+    </view>
+    <image src="http://youxuan.ecbao.cn/material/1541410001471_66.png" class='second'></image>
+  </view>
+
+  <view class='order-list' bindtap='phonecall'>
+    <view class='left'>
+        <image src="http://youxuan.ecbao.cn/material/1541410029813_55.png" class='first'></image>
+        <view class='des'>客服</view>
+    </view>
+    <image src="http://youxuan.ecbao.cn/material/1541410001471_66.png" class='second'></image>
+  </view>
+
+  <view class='order-list' bindtap='setting'>
+    <view class='left'>
+        <image src="http://youxuan.ecbao.cn/material/1541410033563_37.png" class='first'></image>
+        <view class='des'>设置</view>
+    </view>
+    <image src="http://youxuan.ecbao.cn/material/1541410001471_66.png" class='second'></image>
+  </view>
+  
+  <view class='invite-code'>我的邀请码：qwert123456</view>
+</view>
