@@ -44,7 +44,7 @@ module.exports=function(m){
                 <view class='sign'></view>
                 <text>
                   <text class='limit-time'>{{slicesendtime(item.arrivedTime)}}送达</text>
-                  <text class='arrive-time' wx:if='{{item.presetTime >= 0}}'>(正常送达)</text>
+                  <text class='arrive-time' wx:if='{{item.presetTime <= 0}}'>(正常送达)</text>
                   <text class='arrive-time' style="color:#FF5400;" wx:else>(超时{{absolute(item.presetTime)}}分钟)</text>
                 </text>
               </view>

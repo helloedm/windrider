@@ -102,7 +102,7 @@ Page({
       if (res.status == 200) {
         app.globalData.userInfo = res.data;
         wx.removeStorage({ key: 'logout' })
-        wx.redirectTo({
+        wx.reLaunch({
           url: '../index'
         })
       }

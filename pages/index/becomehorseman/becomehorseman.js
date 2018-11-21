@@ -114,8 +114,13 @@ Page({
       showRegion: true,
     });
   },
+  close() {
+    this.setData({
+      showRegion: false,
+    });
+  },
   emitHideRegion: function (e) {
-    console.log(e);
+    // console.log(e);
     let zone = e.detail.regionValue[0].name + "-" + e.detail.regionValue[1].name + "-" + e.detail.regionValue[2].name;
     this.setData({
       showRegion: e.detail.showRegion,
@@ -144,7 +149,7 @@ Page({
   },
   //服务商选择器
   bindPickerChange: function (e) {
-    console.log('picker发送选择改变，携带值为', e.detail.value,e)
+    // console.log('picker发送选择改变，携带值为', e.detail.value,e)
     let index = Number(e.detail.value)
     // console.log(this.data.agentobjectarray[Number(index)])
     let name = this.data.agentobjectarray[Number(index)].agentName;
@@ -161,6 +166,10 @@ Page({
         title: '请先选择服务商地区！',
         icon:'none'
       })
+    } else {
+      this.setData({
+        zoneischose: false
+      });
     }
   },
   //input 模拟数据双向绑定
@@ -212,7 +221,7 @@ Page({
       return false;
     }
     
-    console.log('../laststep/laststep?agentInfoId=' + this.data.agentid + '&name=' + this.data.realname + '&idcard=' + this.data.idcard)
+    // console.log('../laststep/laststep?agentInfoId=' + this.data.agentid + '&name=' + this.data.realname + '&idcard=' + this.data.idcard)
     wx.navigateTo({
       url: '../laststep/laststep?agentInfoId='+this.data.agentid+'&name='+this.data.realname+'&idcard='+this.data.idcard,
     })

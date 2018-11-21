@@ -35,12 +35,9 @@ module.exports=function(m){
  <swiper class="content" duration="100" current="{{currentTab}}" bindchange="changeContent">
  <!-- 抢单 -->
     <swiper-item class="content-item">
-      <view class="refresh {{active == 1? '':'scale'}}" bindtap='refresh'>
-        <image src='http://youxuan.ecbao.cn/material/1542445340501_94.png' mode='widthFix'></image>
-      </view>
       <view class='norob' wx:if="{{getorder.length == 0}}">
         <image src='http://youxuan.ecbao.cn/material/1542444848401_44.png' class='noimage' mode='widthFix'></image>
-        <view class='noorder'>暂时没有订单啦~</view>
+        <view class='noorder'>暂时没有可抢订单啦~</view>
       </view>
 
       <view style='background:#fff;margin-bottom:24rpx;' wx:if="{{getorder.length != 0}}" wx:for="{{getorder}}" wx:key='{{index}}'>
@@ -90,7 +87,7 @@ module.exports=function(m){
     <swiper-item class="content-item">
       <view class='norob' wx:if="{{sendfood.length == 0}}">
         <image src='http://youxuan.ecbao.cn/material/1542444848401_44.png' class='noimage' mode='widthFix'></image>
-        <view class='noorder'>暂时没有订单啦~</view>
+        <view class='noorder'>暂时没有取餐订单啦~</view>
       </view>
       <view style='background:#fff;margin-bottom:24rpx;' wx:if="{{sendfood.length != 0}}" wx:for='{{sendfood}}' wx:key='{{index}}'>
         <view class='order-content' style='min-height:500rpx;'>
@@ -144,7 +141,7 @@ module.exports=function(m){
     <swiper-item class="content-item">
       <view class='norob' wx:if="{{sendlist.length == 0}}">
         <image src='http://youxuan.ecbao.cn/material/1542444848401_44.png' class='noimage' mode='widthFix'></image>
-        <view class='noorder'>暂时没有订单啦~</view>
+        <view class='noorder'>暂时没有配送订单啦~</view>
       </view>
 
       <view style='background:#fff;margin-bottom:24rpx;' wx:if="{{sendlist.length != 0}}" wx:for='{{sendlist}}' wx:key='{{index}}'>
@@ -191,4 +188,8 @@ module.exports=function(m){
       <view style='width:100%;height:100rpx;'></view>
     </swiper-item>
  </swiper>
+
+  <view class="refresh {{active == 1? '':'scale'}}" bindtap='refresh'>
+    <image src='http://youxuan.ecbao.cn/material/1542445340501_94.png' mode='widthFix'></image>
+  </view>
 </view>

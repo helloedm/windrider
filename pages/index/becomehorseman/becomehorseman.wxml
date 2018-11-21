@@ -1,9 +1,9 @@
 <!-- <view class="back" bindtap="back">返回</view> -->
-<view bindtap="chooseRegion"></view>
 <region-picker
     region-value="{{regionValue}}"
     show-region="{{showRegion}}"
     area-place="{{areaPlace}}"
+    bind:close="close"
     bind:myevent="emitHideRegion">
 </region-picker>
 
@@ -12,16 +12,20 @@
     <view class="phone_login">用来<text>实名认证</text></view>
 </view>
   
-<view class="phone_haschecked" style='margin-top:75rpx;'>
-  <input  placeholder="请选择服务商地区" placeholder-style="color:#ccc;font-size:32rpx;" bindtap="chooseRegion"   value='{{zone}}' disabled="true"/>
+<view class="phone_haschecked" style='margin-top:75rpx;' bindtap="chooseRegion">
+  <input  placeholder="请选择服务商地区" placeholder-style="color:#ccc;font-size:32rpx;" value='{{zone}}' disabled="true"/>
   <view class='arrows'></view>
 </view>
+
 <view class="phone_haschecked" style='margin-top:17rpx;' bindtap='ischose'>
   <picker bindchange="bindPickerChange" value="{{agentindex}}" range="{{agentarray}}" disabled = '{{zoneischose}}'>
-    <input placeholder="请选择服务商" placeholder-style="color:#ccc;font-size:32rpx;" disabled="true" value='{{agentname}}'/>
+    <view style='width:100%;height:100%;display:flex;align-items:center;'>
+        <input placeholder="请选择服务商" placeholder-style="color:#ccc;font-size:32rpx;" disabled="true" value='{{agentname}}' style='width:610rpx;'/>
+        <view class='arrows'></view>
+    </view>
   </picker>
-  <view class='arrows'></view>
 </view>
+
 <view class="phone_haschecked" style='margin-top:17rpx;'>
   <input placeholder="真实姓名" placeholder-style="color:#ccc;font-size:32rpx;" value='{{realname}}' bindinput="operateInput"  data-prop="realname"/>
 </view>

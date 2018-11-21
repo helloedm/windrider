@@ -36,6 +36,9 @@ Page({
       },
     })
     this.canGrabOrderList();
+    setInterval(() => {
+      this.canGrabOrderList();
+    }, 300000)
   },
   clickMenu: function (e) {
     var current = e.currentTarget.dataset.current //获取当前tab的index
@@ -176,6 +179,9 @@ Page({
         wx.stopPullDownRefresh();
       },1500)
       if(length == 0){
+        _this.setData({
+          getorder: []
+        })
         return false;
       }
       console.log(res);
@@ -308,6 +314,7 @@ Page({
           icon:'none'
         })
       }
+      this.canGrabOrderList();
     })
   },
   //确认取货
@@ -325,6 +332,7 @@ Page({
           icon: 'none'
         })
       }
+      this.takeOrderList();
     })
   },
   //确认送达
@@ -341,6 +349,7 @@ Page({
           icon: 'none'
         })
       }
+      this.arriveList();
     })
   }
 })

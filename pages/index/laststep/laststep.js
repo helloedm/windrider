@@ -14,7 +14,8 @@ Page({
     getcode:'',
     name:'',
     idcard:'',
-    agentInfoId:''
+    agentInfoId:'',
+    isclickgetcode:false
   },
 
   /**
@@ -92,16 +93,20 @@ Page({
  * 计算倒计时
  */
   computeTime() {
-    let djs = 20
+    let djs = 60
     let timer = setInterval(() => {
       djs--
       this.setData({
-        code: djs + "s"
+        code: djs + "s",
+        isclickgetcode:false
       })
       if (djs <= 0) {
         clearInterval(timer);
         this.setData({
           code: "获取验证码"
+        })
+        this.setData({
+          isclickgetcode: false
         })
       }
     }, 1000)
@@ -121,15 +126,17 @@ Page({
       })
       return false;
     }
-    if (this.data.code == '获取验证码') {
+    if (this.data.code == '获取验证码' & this.data.isclickgetcode == false) {
+      this.setData({
+        isclickgetcode: true
+      })
       netWork.post("note/getRiderCode", {
         phone: this.data.phone,
         type: 1
       }, (res) => {
-        this.computeTime();
         if (res.status == 200) {
-          // this.computeTime();
-        }
+          this.computeTime();
+        } 
       })
     } else {
       wx.showToast({
@@ -196,6 +203,7 @@ Page({
     }
     netWork.post("/sso/register", {
       phone: this.data.phone,
+      name:this.data.name,
       password: this.data.password,
       idcard: this.data.idcard,
       inviteCode: this.data.inviteCode,
@@ -203,13 +211,15 @@ Page({
       code: this.data.getcode,
     }, (res) => {
       console.log(res)
-      if (res.status == 200) {
+      if (res.status == 200) {  
+        app.globalData.userInfo = res.data;
+        let id = res.data.agentInfoId
         wx.showToast({
-          title: res.data.msg,
+          title: res.msg,
           icon: 'none'
         })
         wx.navigateTo({
-          url: '../idcardup/idcardup',
+          url: '../idcardup/idcardup?id=' + id,
         })
       }
     })

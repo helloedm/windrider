@@ -38,7 +38,7 @@
     </view>
   </view>
 
-  <view class='line' bindtap='upidcard'>
+  <view class='line' bindtap='upidcard' wx:if='{{ispass}}'>
     <view class='line-des'>身份认证</view>
     <view class='line-content'>
       <text class='phone red'>审核中/请上传身份证照</text>

@@ -97,6 +97,20 @@ Page({
   },
   //确认提现
   suregetmoney(){
+    if (this.data.wantmoney > this.data.allmoney){
+      wx.showToast({
+        title: '超出最大可提现金额',
+        icon: 'none'
+      })
+      return false;
+    }
+    if (this.data.wantmoney <= 0) {
+      wx.showToast({
+        title: '提现金额不得为负数或零！',
+        icon: 'none'
+      })
+      return false;
+    }
     netWork.post('rider/withdraw',{
       money: this.data.wantmoney,
       riderInfoId: app.globalData.userInfo.id,
@@ -106,6 +120,9 @@ Page({
         wx.showToast({
           title: '提现成功,48小时内到账',
           icon:'none'
+        })
+        wx.navigateTo({
+          url: '../account/account',
         })
       }
     })

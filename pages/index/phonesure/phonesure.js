@@ -10,6 +10,7 @@ Page({
   data: {
     phone:'',
     password:'',
+    getcodeisclick:false,
     code:'获取验证码'
   },
 
@@ -151,7 +152,10 @@ Page({
       })
       return false;
     }
-    if (this.data.code == '获取验证码') {
+    if (this.data.code == '获取验证码' & this.data.getcodeisclick == false) {
+      this.setData({
+        getcodeisclick:true
+      })
       netWork.post("note/getRiderCode", {
         phone: this.data.phone,
         type: 2
@@ -172,7 +176,7 @@ Page({
  * 计算倒计时
  */
   computeTime() {
-    let djs = 20
+    let djs = 60
     let timer = setInterval(() => {
       djs--
       this.setData({
@@ -182,6 +186,9 @@ Page({
         clearInterval(timer);
         this.setData({
           code: "获取验证码"
+        })
+        this.setData({
+          getcodeisclick: false
         })
       }
     }, 1000)

@@ -11,13 +11,20 @@ Page({
     isshowjump:false,
     phone:'',
     workzone:'',
-    waiter:''
+    waiter:'',
+    ispass:true
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    console.log(app.globalData.userInfo.riderAuthResource.idCardFront!='')
+    if (app.globalData.userInfo.riderAuthResource.idCardFront != ''){
+      this.setData({
+        ispass: false
+      })
+    }
     console.log(app.globalData.userInfo.agentInfo.agentName)
     this.setData({
       phone: app.globalData.userInfo.phone,

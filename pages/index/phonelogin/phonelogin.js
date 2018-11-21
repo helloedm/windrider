@@ -12,7 +12,8 @@ Page({
   data: {
     phone: '',
     password: '',
-    code:'获取验证码'
+    code:'获取验证码',
+    getcodeisclick:false
   },
 
   /**
@@ -100,7 +101,7 @@ Page({
         if (res.status == 200) {
           app.globalData.userInfo = res.data;
           wx.removeStorage({ key: 'logout' })
-          wx.redirectTo({
+          wx.reLaunch({
             url: '../index'
           })
         }
@@ -177,6 +178,9 @@ Page({
         this.setData({
           code: "获取验证码"
         })
+        this.setData({
+          getcodeisclick: false
+        })
       }
     }, 1000)
   },
@@ -196,9 +200,11 @@ Page({
       })
       return false;
     }
-
-    this.computeTime();
-    if (this.data.code == '获取验证码'){
+    if (this.data.code == '获取验证码' & this.data.getcodeisclick == false){
+      this.setData({
+        getcodeisclick: true
+      })
+      this.computeTime();
       netWork.post("note/getRiderCode", {
         phone: this.data.phone,
         type: 3

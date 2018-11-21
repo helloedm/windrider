@@ -270,11 +270,14 @@ swiper {
   width:120rpx;
   height:80rpx;
   background:#fff;
-  bottom: 250rpx;
+  bottom: 150rpx;
   right: 36rpx;
   line-height:60px;
   border-radius: 80rpx;
   z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .refresh image{
   width: 42rpx;

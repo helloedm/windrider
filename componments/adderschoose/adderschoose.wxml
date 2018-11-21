@@ -1,12 +1,12 @@
 <view class="free-dialog {{dialog ? 'free-dialog--show' : ''}}">
-    <view class="free-dialog__mask" bindtap="emitHideRegion"></view>
+    <view class="free-dialog__mask" bindtap="close"></view>
     <view class="free-dialog__container">
         <view class="free-dialog__container__header">
             <view>选择所在地区</view>
             <image
                 src="http://youxuan.ecbao.cn/material/1541728903483_83.png"
                 class="close"
-                bindtap="emitHideRegion">
+                bindtap="close">
             </image>
         </view>
         <view class="free-dialog__container__content">

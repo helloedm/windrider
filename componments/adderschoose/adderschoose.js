@@ -86,20 +86,28 @@ Component({
     },
   },
   methods: {
+    close() {
+      // wx.showToast({
+      //   title: '未选择所在地',
+      //   icon: 'none',
+      //   duration: 2000,
+      // });
+      this.setData({
+        dialog: false,
+      });
+      let myEventDetail = {}; // detail对象，提供给事件监听函数
+      let myEventOption = {}; // 触发事件的选项
+      myEventDetail = {
+        showRegion: this.data.dialog,
+      };
+      this.triggerEvent('close', myEventDetail, myEventOption);
+    },
     // 关闭 picker 触发的方法
     emitHideRegion: function () {
-      if (this.data.region.tabs[2].name === '请选择') {
-        wx.showToast({
-          title: '请选择所在地',
-          icon: 'none',
-          duration: 2000,
-        });
-        return false;
-      }
       let myEventDetail = {}; // detail对象，提供给事件监听函数
       let myEventOption = {}; // 触发事件的选项
       this.setData({
-        dialog: !this.data.dialog,
+        dialog: false,
       });
       myEventDetail = {
         showRegion: this.data.dialog,

@@ -12,14 +12,17 @@ Page({
     idcardfront: 'http://youxuan.ecbao.cn/material/1541065357380_42.png',
     idcardafter: 'http://youxuan.ecbao.cn/material/1541065350471_1.png',
     idcardhand: 'http://youxuan.ecbao.cn/material/1541065360761_80.png',
-    isshowjump: false
+    isshowjump: false,
+    id:''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.setData({
+      id: options.id
+    })
   },
 
   /**
@@ -77,9 +80,10 @@ Page({
       sizeType: ['original', 'compressed'],//可以指定是原图还是压缩图，默认二者都有
       sourceType: ['album', 'camera'],//可以指定来源是相册还是相机，默认二者都有
       success(res) {
+        console.log(res);
         // tempFilePath可以作为img标签的src属性显示图片
         const tempFilePaths = res.tempFilePaths[0]
-        if (tempFilePaths[0].size > 2 * 1024 * 1024) {
+        if (res.tempFiles[0].size > 2 * 1024 * 1024) {
           wx.showToast({
             icon: 'none',
             title: '图片大小不能超过2M',
@@ -116,9 +120,29 @@ Page({
           header: {
             "Content-Type": "multipart/form-data"
           },
-          success: function (res) {
+          success: function (resa) {
+            console.log(resa);
+            let image = JSON.parse(resa.data)
             wx.hideLoading();
-            console.log(res);
+            switch (e.currentTarget.dataset.type) {
+              case '0':
+                _this.setData({
+                  idcardfront: image.data
+                })
+                break;
+              case '1':
+                _this.setData({
+                  idcardafter: image.data
+                })
+                break;
+              case '2':
+                _this.setData({
+                  idcardhand: image.data
+                })
+                break;
+              default:
+                console.log("error imagelogin")
+            }
           },
           fail: function (err) {
             console.log(err);
@@ -146,10 +170,47 @@ Page({
       isshowjump: false
     })
   },
+  seeseelike(){
+    wx.reLaunch({
+      url: '../passwordlogin/passwordlogin',
+    })
+  },
   //上传审核照片
   upimage(){
-    wx.redirectTo({
-      url: '../passwordlogin/passwordlogin',
+    let _this = this
+    if (this.data.idcardfront == 'http://youxuan.ecbao.cn/material/1541065357380_42.png'){
+      wx.showToast({
+        title: '身份证正面不得为空！',
+        icon:'none'
+      })
+      return false;
+    }
+    if (this.data.idcardafter == 'http://youxuan.ecbao.cn/material/1541065350471_1.png') {
+      wx.showToast({
+        title: '身份证背面不得为空！',
+        icon: 'none'
+      })
+      return false;
+    } 
+    if (this.data.idcardhand == 'http://youxuan.ecbao.cn/material/1541065360761_80.png') {
+      wx.showToast({
+        title: '手持身份证照片不得为空！',
+        icon: 'none'
+      })
+      return false;
+    }
+    netWork.post('rider/submitAuthResource',{
+      riderInfoId: _this.data.id,
+      // riderInfoId: 59,
+      idCardFront: this.data.idcardfront,
+      idCardBack: this.data.idcardafter,
+      holdPhoto: this.data.idcardhand
+    },(res)=>{
+      if(res.status == 200){
+        wx.redirectTo({
+          url: '../passwordlogin/passwordlogin',
+        })
+      }
     })
   }
 })

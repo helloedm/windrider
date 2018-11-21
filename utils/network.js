@@ -39,7 +39,7 @@ let network = {
       },
       data: params,
       success: (res) => {
-        console.log(res.data.status,res);
+        // console.log(res.data.status,res);
         if (res.data.status != 200) {
           wx.showToast({
             title: res.data.msg,
