@@ -278,6 +278,7 @@ swiper {
   display: flex;
   justify-content: center;
   align-items: center;
+  box-shadow:0px 3px 30px 0px rgba(0, 0, 0, 0.6);
 }
 .refresh image{
   width: 42rpx;
