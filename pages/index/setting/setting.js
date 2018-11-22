@@ -121,8 +121,9 @@ Page({
     })
   },
   upidcard(){
+    let id = app.globalData.userInfo.id
     wx.navigateTo({
-      url: '../idcardup/idcardup',
+      url: '../idcardup/idcardup?id='+id,
     })
   }
 })

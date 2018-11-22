@@ -144,6 +144,9 @@ Page({
         icon: 'none',
         duration: 3000
       })
+      this.setData({
+        isclickgetcode: false
+      })
     }
   },
   //失去焦点数据校验

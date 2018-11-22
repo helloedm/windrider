@@ -4,7 +4,7 @@
 		"ignore": []
 	},
 	"setting": {
-		"urlCheck": false,
+		"urlCheck": true,
 		"es6": true,
 		"postcss": true,
 		"minified": true,
@@ -50,7 +50,7 @@
 				{
 					"id": 2,
 					"name": "idcardup",
-					"pathName": "pages/index/laststep/laststep",
+					"pathName": "pages/index/idcardup/idcardup",
 					"query": "id=39"
 				}
 			]

@@ -13,20 +13,28 @@ let network = {
         title: '加载中..',
       })
     }
-    params.sessionId = wx.getStorageSync('sessionId') || '';
+    // console.log('asd',wx.getStorageSync('sessionId')=='')
+    if (wx.getStorageSync('sessionId') != ''){
+      params.sessionId = wx.getStorageSync('sessionId')
+    }
     /*
     对参数params进行排序
     */
-    var newkey = Object.keys(params).sort();
+    var newkey = Object.keys(params).sort();//按字母顺序进行排序
     var newObj = {};
     for (var i = 0; i < newkey.length; i++) {//遍历newkey数组
       newObj[newkey[i]] = params[newkey[i]];//向新创建的对象中按照排好的顺序依次增加键值对
     }
 
     for (let key in newObj) {
-      sign += key + '=' + params[key];
+      if (params[key] != ''){
+        sign += key + '=' + params[key];
+      }
     }
-    sign = md5(sign + config.secretKey);
+    sign += 'qs'
+    console.log(sign)
+    // sign = md5(sign + config.secretKey);
+    sign = md5(sign);
     wx.request({
       url: `${config.host}${url}`,
       method: "POST",
@@ -34,12 +42,11 @@ let network = {
         "lversion": `${config.lversion}`,
         "content-type": "application/x-www-form-urlencoded",
         // "Token": token,
-        "Sign": sign,
+        "sign": sign,
         "source": 'fengda'
       },
       data: params,
       success: (res) => {
-        // console.log(res.data.status,res);
         if (res.data.status != 200) {
           wx.showToast({
             title: res.data.msg,
