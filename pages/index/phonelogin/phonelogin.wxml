@@ -7,7 +7,7 @@
   <input  placeholder="请输入已验证的手机号" placeholder-style="color:#ccc;font-size:32rpx;" placeholder-style="color:#ccc;font-size:32rpx;" value='{{phone}}' bindinput="operateInput" bindblur='checkData' data-prop="phone"/>
 </view>
 <view class="phone_haschecked" style='margi-top:17rpx;'>
-  <input  password  placeholder="请输入收到的验证码" placeholder-style="color:#ccc;font-size:32rpx;" value='{{password}}' bindinput="operateInput" bindblur='checkData' data-prop="password"/>
+  <input placeholder="请输入收到的验证码" placeholder-style="color:#ccc;font-size:32rpx;" value='{{password}}' bindinput="operateInput" bindblur='checkData' data-prop="password"/>
   <view class='getcode' bindtap='getcode'>{{code}}</view>
 </view>
 

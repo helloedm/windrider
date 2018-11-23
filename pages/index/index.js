@@ -50,6 +50,17 @@ Page({
     }
   },
   /**
+ * 用户点击右上角分享
+ */
+  onShareAppMessage: function (res) {
+    let otherUid = wx.getStorageSync("otherUid");
+    return {
+      title: '全城取送 1小时达',
+      path: "pages/index/phonelogin/phonelogin",
+      imageUrl: 'http://youxuan.ecbao.cn/material/1542957534481_34.jpg'
+    }
+  },
+  /**
    * 监听下拉事件
    */
   onPullDownRefresh() {
